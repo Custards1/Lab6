@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <a href="/"> Go Back To Main Menu</a>  <br>     <br>
+        <h1>Courses Report</h1>
+        <h2>{{ report_title  }}</h2>
+        <br>
+        <table style="margin: auto;width:550px;" class="classForm">
+            <tr><th>Subject</th><th>Number</th><th>Course Title</th></tr>
+            {% for course in courses  %}
+                <tr>
+                    <td style="text-align: center;">{{ course.subject }}</td>
+                    <td style="text-align: center;">{{ course.number }}</td>
+                    <td style="text-align: center;">{{ course.title }}</td>
+                </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

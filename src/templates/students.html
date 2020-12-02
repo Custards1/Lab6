@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <a href="/"> Go Back To Main Menu</a>  <br>     <br>
+        <h1>Student Report</h1>
+        <h2>{{ report_title  }}</h2>
+        <br>
+        <table style="margin: auto;width:1000px;" class="classForm">
+            <tr><th>Student ID</th><th>Name</th><th>eMail</th><th>Standing</th><th>GPA</th></tr>
+            {% for student in students  %}
+                <tr>
+                    <td style="text-align: center;">{{ student.id }}</td>
+                    <td style="text-align: left;">{{ student.name }}</td>
+                    <td style="text-align: left;">{{ student.email }}</td>
+                    <td style="text-align: center;">{{ student.standing }}</td>
+                    <td style="text-align: center;">{{ student.gpa }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
